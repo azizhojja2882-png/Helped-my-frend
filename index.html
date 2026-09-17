@@ -68,21 +68,10 @@
 <body class="flex items-center justify-center min-h-screen p-0 sm:p-4 bg-[#050507]">
 
     <!-- Mobile Screen Frame Container -->
-    <div class="w-full max-w-[412px] h-[100vh] sm:h-[840px] bg-[#0d0e12] sm:rounded-[36px] border-0 sm:border-8 sm:border-[#1e2029] shadow-2xl flex flex-col justify-between overflow-hidden relative select-none">
+    <div class="w-full max-w-[393px] h-[100vh] sm:h-[768px] bg-[#0d0e12] sm:rounded-none border-0 shadow-2xl flex flex-col justify-between overflow-hidden relative select-none">
         
-        <!-- Status Bar Fake (Mobile view mimic) -->
-        <div class="flex justify-between items-center px-6 pt-3 text-xs text-gray-400 font-medium">
-            <span id="current-time">15:50</span>
-            <div class="flex items-center gap-1.5">
-                <!-- Signal & Battery Icons -->
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.2C2.89 16.48 2 14.34 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.34-.89 4.48-2.35 6.2l-1.34-.59C19.26 16.07 20 14.12 20 12c0-4.97-4.03-9-9-9z"/></svg>
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.2C2.89 16.48 2 14.34 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.34-.89 4.48-2.35 6.2l-1.34-.59C19.26 16.07 20 14.12 20 12c0-4.97-4.03-9-9-9z"/></svg>
-                <span class="text-[10px]">34%</span>
-            </div>
-        </div>
-
         <!-- App Header -->
-        <div class="flex items-center justify-between px-6 pt-4 pb-2">
+        <div class="h-[68px] shrink-0 flex items-center justify-between px-[17px] pt-0 pb-0">
             <h1 class="text-2xl font-bold text-white tracking-wide">Apk Qo'riqchi</h1>
             <button id="settings-btn" class="p-2 rounded-full hover:bg-white/5 active:scale-95 transition-all text-gray-300">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -93,13 +82,13 @@
         </div>
 
         <!-- Main Scrollable Content -->
-        <div class="flex-1 overflow-y-auto px-5 py-2 flex flex-col justify-around">
+        <div class="flex-1 min-h-0 overflow-hidden px-[26px] py-[15px] flex flex-col">
 
             <!-- Circular Security Progress Gauge -->
-            <div class="flex flex-col items-center justify-center my-2 relative">
+            <div class="shrink-0 flex flex-col items-center justify-start relative">
                 <div id="pulse-ring" class="absolute w-[220px] h-[220px] rounded-full bg-orange-600/10 blur-xl pointer-events-none transition-all duration-500"></div>
                 
-                <div class="relative w-56 h-56 flex items-center justify-center">
+                <div class="relative w-[218px] h-[218px] flex items-center justify-center">
                     <svg class="w-full h-full glow-effect" viewBox="0 0 100 100">
                         <defs>
                             <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -112,7 +101,7 @@
                         <!-- Animated Progress Circle -->
                         <circle id="progress-circle" class="circle-progress" cx="50" cy="50" r="42" 
                                 stroke-dasharray="263.89" 
-                                stroke-dashoffset="21.11"></circle>
+                                stroke-dashoffset="0"></circle>
                     </svg>
 
                     <!-- Center Shield Content -->
@@ -124,12 +113,12 @@
                             </svg>
                         </div>
                         <span class="text-xs text-gray-300 font-medium tracking-wide">Анализ безопасности</span>
-                        <span id="score-percentage" class="text-3xl font-extrabold text-white tracking-tight mt-0.5">92%</span>
+                        <span id="score-percentage" class="text-3xl font-extrabold text-white tracking-tight mt-0.5">100%</span>
                     </div>
                 </div>
 
                 <!-- Rescan Interactive Button -->
-                <button id="rescan-btn" class="mt-3 px-5 py-2 bg-[#1d1e24] hover:bg-[#272930] active:scale-95 text-xs font-semibold text-orange-400 rounded-full border border-orange-500/20 transition-all flex items-center gap-2">
+                <button id="rescan-btn" class="mt-[-1px] mb-[2px] px-5 py-1.5 bg-[#1d1e24] hover:bg-[#272930] active:scale-95 text-xs font-semibold text-orange-400 rounded-full border border-orange-500/20 transition-all flex items-center gap-2">
                     <svg id="rescan-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                     </svg>
@@ -138,12 +127,12 @@
             </div>
 
             <!-- Device Security Status Panel -->
-            <div class="bg-[#18191d] rounded-2xl p-4 border border-white/5 shadow-xl my-2">
+            <div class="bg-[#18191d] rounded-2xl p-4 border border-white/5 shadow-xl">
                 
                 <!-- Status Header -->
                 <div class="flex items-center gap-2.5 mb-2">
-                    <div id="status-icon-bg" class="w-6 h-6 rounded-md bg-orange-500/20 flex items-center justify-center shrink-0">
-                        <svg id="status-icon" class="w-3.5 h-3.5 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <div id="status-icon-bg" class="w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center shrink-0">
+                        <svg id="status-icon" class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4z"/>
                         </svg>
                     </div>
@@ -152,15 +141,15 @@
 
                 <!-- Status Sub-label -->
                 <div class="flex items-center gap-1.5 ml-8 mb-3">
-                    <span id="status-dot" class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                    <span id="status-text" class="text-xs font-medium text-orange-400">Требуется внимание</span>
+                    <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="status-text" class="text-xs font-medium text-emerald-400">Все в порядке</span>
                 </div>
 
                 <!-- Evaluation Text -->
                 <div class="ml-1 border-t border-white/5 pt-3">
                     <p class="text-[11px] text-gray-400 font-medium">Оценка безопасности</p>
-                    <p id="security-rating-text" class="text-lg font-bold text-orange-400 mt-0.5">92% Безопасно</p>
-                    <p id="apps-count-text" class="text-[11px] text-gray-400 mt-0.5">109 приложений под наблюдением</p>
+                    <p id="security-rating-text" class="text-lg font-bold text-emerald-400 mt-0.5">100% Безопасно</p>
+                    <p id="apps-count-text" class="text-[11px] text-gray-400 mt-0.5">24 приложений под наблюдением</p>
                 </div>
 
                 <!-- Three App Categories Grid -->
@@ -182,7 +171,7 @@
                                 <path d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
                             </svg>
                         </div>
-                        <span id="suspicious-count" class="text-lg font-bold text-orange-400">8</span>
+                        <span id="suspicious-count" class="text-lg font-bold text-orange-400">0</span>
                         <span class="text-[10px] text-gray-400 font-medium mt-0.5">Сомнительные</span>
                     </div>
 
@@ -193,7 +182,7 @@
                                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
                         </div>
-                        <span id="safe-count" class="text-lg font-bold text-emerald-400">101</span>
+                        <span id="safe-count" class="text-lg font-bold text-emerald-400">24</span>
                         <span class="text-[10px] text-gray-400 font-medium mt-0.5">Безопасные</span>
                     </div>
 
@@ -204,7 +193,7 @@
         </div>
 
         <!-- Bottom Navigation Bar -->
-        <div class="bg-[#141518] border-t border-white/5 px-4 py-2.5 flex justify-around items-center">
+        <div class="h-[99px] shrink-0 bg-[#141518] border-t border-white/5 px-4 py-2.5 flex justify-around items-center">
             
             <!-- Apps Tab -->
             <button class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
@@ -215,7 +204,7 @@
             </button>
 
             <!-- Scan Tab (Active) -->
-            <button class="nav-item flex flex-col items-center gap-1 text-orange-500">
+            <button id="scan-tab" title="Запустить проверку" class="nav-item flex flex-col items-center gap-1 text-orange-500">
                 <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/40 -mt-2 border-2 border-[#141518]">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4z"/>
@@ -277,38 +266,37 @@
 
         let isScanning = false;
 
-        // Rescan / Randomize functionality
-        rescanBtn.addEventListener('click', () => {
+        // Демонстрационный интерфейс проверки.
+        // Каждый запуск получает новый набор чисел.
+        function runSecurityScan() {
             if (isScanning) return;
             isScanning = true;
 
-            // Trigger visual scan feedback
             rescanIcon.classList.add('animate-spin');
             pulseRing.classList.add('scanning-pulse');
             centerShield.classList.add('scale-110');
 
-            // Generate Random Values
-            const totalApps = Math.floor(Math.random() * 70) + 80; // 80 to 150
-            const dangerousApps = Math.random() < 0.3 ? Math.floor(Math.random() * 3) + 1 : 0; // 0 to 3
-            const suspiciousApps = Math.floor(Math.random() * 12); // 0 to 11
+            const totalApps = Math.floor(Math.random() * 121) + 24;
+            const dangerousApps = Math.floor(Math.random() * (Math.min(5, totalApps) + 1));
+            const suspiciousApps = Math.floor(
+                Math.random() * (Math.min(15, totalApps - dangerousApps) + 1)
+            );
             const safeApps = totalApps - dangerousApps - suspiciousApps;
 
-            // Calculate realistic security score based on risks
-            let calculatedScore = 100 - (dangerousApps * 18) - (suspiciousApps * 1.5);
-            calculatedScore = Math.max(45, Math.min(100, Math.round(calculatedScore)));
+            let calculatedScore = Math.round(
+                100 - dangerousApps * 16 - suspiciousApps * 2
+            );
+            calculatedScore = Math.max(25, Math.min(100, calculatedScore));
 
-            // Scanning state UI text
             scorePercentageEl.textContent = '...';
             securityRatingText.textContent = 'Сканирование...';
-            securityRatingText.className = "text-lg font-bold text-gray-300 mt-0.5";
+            securityRatingText.className =
+                "text-lg font-bold text-gray-300 mt-0.5";
 
-            // Animate counting numbers during scan
-            let scanInterval = setInterval(() => {
-                const tempScore = Math.floor(Math.random() * 40) + 60;
-                setScoreProgress(tempScore);
+            const scanInterval = setInterval(() => {
+                setScoreProgress(Math.floor(Math.random() * 76) + 25);
             }, 100);
 
-            // Finish scan after 1.8 seconds
             setTimeout(() => {
                 clearInterval(scanInterval);
                 isScanning = false;
@@ -317,43 +305,57 @@
                 pulseRing.classList.remove('scanning-pulse');
                 centerShield.classList.remove('scale-110');
 
-                // Set final values
                 setScoreProgress(calculatedScore);
                 scorePercentageEl.textContent = `${calculatedScore}%`;
-                
                 dangerousCountEl.textContent = dangerousApps;
                 suspiciousCountEl.textContent = suspiciousApps;
                 safeCountEl.textContent = safeApps;
-                appsCountText.textContent = `${totalApps} приложений под наблюдением`;
+                appsCountText.textContent =
+                    `${totalApps} приложений под наблюдением`;
 
-                // Update UI based on final health status
                 if (calculatedScore >= 95) {
                     securityRatingText.textContent = `${calculatedScore}% Отлично`;
-                    securityRatingText.className = "text-lg font-bold text-emerald-400 mt-0.5";
+                    securityRatingText.className =
+                        "text-lg font-bold text-emerald-400 mt-0.5";
                     statusText.textContent = "Устройство в безопасности";
-                    statusText.className = "text-xs font-medium text-emerald-400";
-                    statusDot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
-                    statusIconBg.className = "w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center shrink-0";
+                    statusText.className =
+                        "text-xs font-medium text-emerald-400";
+                    statusDot.className =
+                        "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+                    statusIconBg.className =
+                        "w-6 h-6 rounded-md bg-emerald-500/20 flex items-center justify-center shrink-0";
                 } else if (calculatedScore >= 80) {
                     securityRatingText.textContent = `${calculatedScore}% Безопасно`;
-                    securityRatingText.className = "text-lg font-bold text-orange-400 mt-0.5";
+                    securityRatingText.className =
+                        "text-lg font-bold text-orange-400 mt-0.5";
                     statusText.textContent = "Требуется внимание";
-                    statusText.className = "text-xs font-medium text-orange-400";
-                    statusDot.className = "w-2 h-2 rounded-full bg-orange-500 animate-pulse";
-                    statusIconBg.className = "w-6 h-6 rounded-md bg-orange-500/20 flex items-center justify-center shrink-0";
+                    statusText.className =
+                        "text-xs font-medium text-orange-400";
+                    statusDot.className =
+                        "w-2 h-2 rounded-full bg-orange-500 animate-pulse";
+                    statusIconBg.className =
+                        "w-6 h-6 rounded-md bg-orange-500/20 flex items-center justify-center shrink-0";
                 } else {
-                    securityRatingText.textContent = `${calculatedScore}% Риск обнаружен`;
-                    securityRatingText.className = "text-lg font-bold text-red-500 mt-0.5";
+                    securityRatingText.textContent =
+                        `${calculatedScore}% Риск обнаружен`;
+                    securityRatingText.className =
+                        "text-lg font-bold text-red-500 mt-0.5";
                     statusText.textContent = "Обнаружена угроза!";
-                    statusText.className = "text-xs font-medium text-red-500";
-                    statusDot.className = "w-2 h-2 rounded-full bg-red-500 animate-ping";
-                    statusIconBg.className = "w-6 h-6 rounded-md bg-red-500/20 flex items-center justify-center shrink-0";
+                    statusText.className =
+                        "text-xs font-medium text-red-500";
+                    statusDot.className =
+                        "w-2 h-2 rounded-full bg-red-500 animate-pulse";
+                    statusIconBg.className =
+                        "w-6 h-6 rounded-md bg-red-500/20 flex items-center justify-center shrink-0";
                 }
-
             }, 1800);
-        });
+        }
 
-        // Tab click interactions
+        rescanBtn.addEventListener('click', runSecurityScan);
+
+        const scanTab = document.getElementById('scan-tab');
+        if (scanTab) scanTab.addEventListener('click', runSecurityScan);
+
         document.querySelectorAll('.nav-item').forEach((tab) => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.nav-item').forEach(t => {
@@ -364,6 +366,7 @@
                 this.classList.add('text-orange-500');
             });
         });
+
     </script>
 </body>
 </html>
