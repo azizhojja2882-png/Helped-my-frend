@@ -63,6 +63,51 @@
             background: #2a2d36;
             border-radius: 4px;
         }
+    
+        /* Apple-inspired system UI: clean surfaces, soft separators, restrained color. */
+        body {
+            background: #f2f2f7 !important;
+            color: #1c1c1e;
+        }
+        .apple-shell {
+            -webkit-font-smoothing: antialiased;
+            background: #f2f2f7 !important;
+            color: #1c1c1e !important;
+        }
+        .apple-header {
+            background: rgba(255,255,255,.92);
+            border-bottom: 1px solid rgba(60,60,67,.16);
+            backdrop-filter: blur(18px);
+        }
+        .apple-card {
+            background: rgba(255,255,255,.92) !important;
+            border: 1px solid rgba(60,60,67,.13) !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05) !important;
+        }
+        .apple-stat {
+            background: #f2f2f7 !important;
+            border: 1px solid rgba(60,60,67,.10) !important;
+        }
+        .apple-nav {
+            background: rgba(255,255,255,.94) !important;
+            border-top: 1px solid rgba(60,60,67,.16) !important;
+            backdrop-filter: blur(20px);
+        }
+        .apple-button {
+            background: #007aff !important;
+            color: white !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            font-size: 13px !important;
+            min-height: 40px;
+        }
+        .apple-button:hover { background: #0071e3 !important; }
+        .apple-title-orange { color: #007aff !important; }
+        .apple-muted { color: #8e8e93 !important; }
+        .apple-gauge {
+            filter: none !important;
+        }
+
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-0 sm:p-4 bg-[#050507]">
@@ -71,8 +116,8 @@
     <div class="w-full max-w-[393px] h-[100vh] sm:h-[768px] bg-[#0d0e12] sm:rounded-none border-0 shadow-2xl flex flex-col justify-between overflow-hidden relative select-none">
         
         <!-- App Header -->
-        <div class="h-[68px] shrink-0 flex items-center justify-between px-[17px] pt-0 pb-0">
-            <h1 class="text-2xl font-bold text-white tracking-wide">Apk Qo'riqchi</h1>
+        <div class="apple-header h-[68px] shrink-0 flex items-center justify-between px-[17px] pt-0 pb-0">
+            <h1 class="text-2xl font-bold tracking-wide apple-title-orange">Apk Qo'riqchi</h1>
             <button id="settings-btn" class="p-2 rounded-full hover:bg-white/5 active:scale-95 transition-all text-gray-300">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -118,7 +163,7 @@
                 </div>
 
                 <!-- Rescan Interactive Button -->
-                <button id="rescan-btn" class="mt-[-1px] mb-[2px] px-5 py-1.5 bg-[#1d1e24] hover:bg-[#272930] active:scale-95 text-xs font-semibold text-orange-400 rounded-full border border-orange-500/20 transition-all flex items-center gap-2">
+                <button id="rescan-btn" class="apple-button mt-[-1px] mb-[2px] px-5 py-1.5 hover:bg-[#272930] active:scale-95 text-xs font-semibold text-orange-400 rounded-full border border-orange-500/20 transition-all flex items-center gap-2">
                     <svg id="rescan-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                     </svg>
@@ -127,7 +172,7 @@
             </div>
 
             <!-- Device Security Status Panel -->
-            <div class="bg-[#18191d] rounded-2xl p-4 border border-white/5 shadow-xl">
+            <div class="apple-card rounded-2xl p-4 border shadow-xl">
                 
                 <!-- Status Header -->
                 <div class="flex items-center gap-2.5 mb-2">
@@ -147,43 +192,43 @@
 
                 <!-- Evaluation Text -->
                 <div class="ml-1 border-t border-white/5 pt-3">
-                    <p class="text-[11px] text-gray-400 font-medium">Оценка безопасности</p>
+                    <p class="text-[11px] apple-muted font-medium">Оценка безопасности</p>
                     <p id="security-rating-text" class="text-lg font-bold text-emerald-400 mt-0.5">100% Безопасно</p>
-                    <p id="apps-count-text" class="text-[11px] text-gray-400 mt-0.5">24 приложений под наблюдением</p>
+                    <p id="apps-count-text" class="text-[11px] apple-muted mt-0.5">24 приложений под наблюдением</p>
                 </div>
 
                 <!-- Three App Categories Grid -->
                 <div class="grid grid-cols-3 gap-2.5 mt-4">
                     
                     <!-- Dangerous Apps -->
-                    <div class="bg-[#121316] p-2.5 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center">
+                    <div class="apple-stat p-2.5 rounded-xl border flex flex-col items-center justify-center text-center">
                         <div class="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center mb-1">
                             <span class="w-2 h-2 rounded-full bg-red-500"></span>
                         </div>
                         <span id="dangerous-count" class="text-lg font-bold text-white">0</span>
-                        <span class="text-[10px] text-gray-400 font-medium mt-0.5">Опасные</span>
+                        <span class="text-[10px] apple-muted font-medium mt-0.5">Опасные</span>
                     </div>
 
                     <!-- Suspicious Apps -->
-                    <div class="bg-[#121316] p-2.5 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center">
+                    <div class="apple-stat p-2.5 rounded-xl border flex flex-col items-center justify-center text-center">
                         <div class="w-5 h-5 rounded-full bg-orange-500/20 flex items-center justify-center mb-1">
                             <svg class="w-3 h-3 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
                             </svg>
                         </div>
                         <span id="suspicious-count" class="text-lg font-bold text-orange-400">0</span>
-                        <span class="text-[10px] text-gray-400 font-medium mt-0.5">Сомнительные</span>
+                        <span class="text-[10px] apple-muted font-medium mt-0.5">Сомнительные</span>
                     </div>
 
                     <!-- Safe Apps -->
-                    <div class="bg-[#121316] p-2.5 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center">
+                    <div class="apple-stat p-2.5 rounded-xl border flex flex-col items-center justify-center text-center">
                         <div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center mb-1">
                             <svg class="w-3 h-3 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
                         </div>
                         <span id="safe-count" class="text-lg font-bold text-emerald-400">24</span>
-                        <span class="text-[10px] text-gray-400 font-medium mt-0.5">Безопасные</span>
+                        <span class="text-[10px] apple-muted font-medium mt-0.5">Безопасные</span>
                     </div>
 
                 </div>
@@ -196,7 +241,7 @@
         <div class="h-[99px] shrink-0 bg-[#141518] border-t border-white/5 px-4 py-2.5 flex justify-around items-center">
             
             <!-- Apps Tab -->
-            <button class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+            <button class="nav-item flex flex-col items-center gap-1 apple-muted hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                 </svg>
@@ -214,7 +259,7 @@
             </button>
 
             <!-- Memory Check Tab -->
-            <button class="nav-item flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+            <button class="nav-item flex flex-col items-center gap-1 apple-muted hover:text-white transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
                 </svg>
@@ -360,7 +405,7 @@
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.nav-item').forEach(t => {
                     t.classList.remove('text-orange-500');
-                    t.classList.add('text-gray-400');
+                    t.classList.add('apple-muted');
                 });
                 this.classList.remove('text-gray-400');
                 this.classList.add('text-orange-500');
